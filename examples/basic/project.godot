@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Basic Keycloak Example"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Keycloak="*res://addons/keycloak/src/auth.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jwt/plugin.cfg", "res://addons/keycloak/plugin.cfg")
+
+[keycloak]
+
+realm_id="my_keycloak_realm"
+client_id="game_client_id"
+client_secret="super_secret"
+server_addr="127.0.0.1"
+server_port=8080
